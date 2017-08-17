@@ -15,6 +15,7 @@ export default class Home extends Component {
 
     this.handlePressBaseCurrency = this.handlePressBaseCurrency.bind(this);
     this.handlePressQuoteCurrency = this.handlePressQuoteCurrency.bind(this);
+    this.handleTextChange = this.handleTextChange.bind(this);
   }
 
   handlePressBaseCurrency() {
@@ -23,6 +24,10 @@ export default class Home extends Component {
 
   handlePressQuoteCurrency() {
     console.log("quote currency");
+  }
+
+  handleTextChange(text) {
+    console.log('changed text: ', text);
   }
 
   render() {
@@ -36,11 +41,15 @@ export default class Home extends Component {
         <InputWithButton
           buttonText={TEMP_BASE_CURRENCY}
           onPress={this.handlePressBaseCurrency}
+          defaultValue={TEMP_BASE_PRICE}
+          keyboardType="numeric"
+          onChangeText={this.handleTextChange}
         />
         <InputWithButton
           buttonText={TEMP_QUOTE_CURRENCY}
           onPress={this.handlePressQuoteCurrency}
           editable={false}
+          defaultValue={TEMP_QUOTE_PRICE}
         />
       </Container>
     )

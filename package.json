@@ -5,6 +5,7 @@
   "devDependencies": {
     "eslint": "^3.19.0",
     "eslint-config-airbnb": "^15.1.0",
+    "flow-bin": "0.33.0",
     "jest-expo": "~19.0.0",
     "react-native-scripts": "1.1.0",
     "react-test-renderer": "16.0.0-alpha.12"

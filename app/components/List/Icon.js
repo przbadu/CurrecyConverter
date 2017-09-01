@@ -26,7 +26,7 @@ function Icon({ checkmark, visible, iconBackground }) {
     );
   }
 
-  return <View style={style.icon} />;
+  return <View style={styles.icon} />;
 }
 
 Icon.propTypes = {

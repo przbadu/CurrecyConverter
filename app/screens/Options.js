@@ -1,21 +1,27 @@
 import React, { Component } from 'react';
-import { ScrollView, StatusBar, Platform } from 'react-native';
+import PropTypes from 'prop-types';
+import { ScrollView, StatusBar, Platform, Linking } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 
 import { ListItem, Seperator } from '../components/List';
+import Themes from '../screens/Themes';
 
 const ICON_PREFIX = Platform.OS === 'ios' ? 'ios' : 'md';
 const ICON_COLOR = '#868686';
 const ICON_SIZE = 23;
 
 class Options extends Component {
-  handleThemesPress() {
-    console.log('theme pressed');
-  }
+  static propTypes = {
+    navigation: PropTypes.object,
+  };
 
-  handleSitePress() {
-    console.log('site  pressed');
-  }
+  handleThemesPress = () => {
+    this.props.navigation.navigate('Themes');
+  };
+
+  handleSitePress = () => {
+    Linking.openURL('http://fixer.io').catch(() => alert('An error occurred'));
+  };
 
   render() {
     return (

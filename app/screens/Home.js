@@ -24,15 +24,20 @@ class Home extends Component {
     amount: PropTypes.number,
     conversionRate: PropTypes.number,
     isFetching: PropTypes.bool,
-    lastConvertedDate: PropTypes.date,
   };
 
   handlePressBaseCurrency = () => {
-    this.props.navigation.navigate('CurrencyList', { title: 'Base Currency' });
+    this.props.navigation.navigate('CurrencyList', {
+      title: 'Base Currency',
+      type: 'base',
+    });
   };
 
   handlePressQuoteCurrency = () => {
-    this.props.navigation.navigate('CurrencyList', { title: 'Quote Currency' });
+    this.props.navigation.navigate('CurrencyList', {
+      title: 'Quote Currency',
+      type: 'quote',
+    });
   };
 
   handleTextChange = amount => {

@@ -4,16 +4,18 @@ import { View } from 'react-native';
 
 import styles from './styles';
 
-function Container({ children }) {
-  return (
-    <View style={styles.container}>
-      { children }
-    </View>
-  );
+function Container({ children, backgroundColor }) {
+  const containerStyles = [styles.container];
+  if (backgroundColor) {
+    containerStyles.push({ backgroundColor });
+  }
+
+  return <View style={containerStyles}>{children}</View>;
 }
 
 Container.propTypes = {
   children: PropTypes.any,
+  backgroundColor: PropTypes.string,
 };
 
 export default Container;
